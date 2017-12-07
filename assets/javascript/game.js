@@ -1,18 +1,19 @@
 var lRange = "abcdefghijklmnopqrstuvwxyz";
 // abcdefghijklmno
+
+//VARIABLES
 var alphaArr = lRange.split("");
 var guessWins = 0;
 var guessLosses = 0;
 var guessesLeft = 5;
-// var guessed = 0;
 var guessArr = [];
 //Random Letter Chosen
 var randomLetter = alphaArr [Math.floor(Math.random()*alphaArr.length)];
-//Starts the Game
+//Sets the Game Counter
 setCounter();
 
-//Reset the Game
-// Game Starts on key Press
+
+// Game Starts on key Press & Overall Game Logic
 document.onkeyup = function(event) {
 guessesLeft--;
 if (guessesLeft >= 0) {
@@ -40,6 +41,8 @@ updateLosses();
 }
 //
 };
+
+//FUNCTIONS
 
 // Set Game Counter
 function setCounter(){
@@ -70,7 +73,7 @@ displayArray.textContent =  guessArr;
 function updateCounter(){
 
 var gLeftUpdate = document.getElementById("guessesLeft");
-gLeftUpdate.textContent = "Guesses Left= " + guessesLeft;
+gLeftUpdate.textContent = "Guesses Remaining=  " + guessesLeft;
 };
 //Update the Wins
 function updateWins(){
